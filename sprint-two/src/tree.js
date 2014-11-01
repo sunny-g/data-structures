@@ -29,7 +29,24 @@ treeMethods.contains = function(target){
 
   walkTree(this);
   return found;
+
+  // return this.value === target? true :
+  // this.children.some(function(child){
+  //   return child.contains(target);
+  // });
 };
+
+// treeMethods.countLeaves = function() {
+//   return this.children.reduce(function(sum, child){
+//     return sum + child.countLeaves();
+//   }, this.children.length? 0: 1);
+// };
+
+// treeMethods.countAnything = function(testFn){
+//   return this.children.reduce(function(sum, child){
+//     return sum + child.countAnything(testFn);
+//   }, testFn(this));
+// };
 
 treeMethods.removeFromParent = function() {
   this.parent.children = _.without(this.parent.children, this);
